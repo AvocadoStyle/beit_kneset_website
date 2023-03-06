@@ -101,7 +101,7 @@ function Header() {
 
             {/* Hamburger button */}
             <button ref={trigger} className={`hamburger ${mobileNavOpen && 'active'}`} aria-controls="mobile-nav" aria-expanded={mobileNavOpen} onClick={() => setMobileNavOpen(!mobileNavOpen)}>
-              <span className="sr-only">Menu</span>
+              <span className="sr-only">תפריט</span>
               <svg className="w-6 h-6 fill-current text-gray-300 hover:text-gray-200 transition duration-150 ease-in-out" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <rect y="4" width="24" height="2" rx="1" />
                 <rect y="11" width="24" height="2" rx="1" />
@@ -113,18 +113,21 @@ function Header() {
             <nav id="mobile-nav" ref={mobileNav} className="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" style={mobileNavOpen ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: .8 } }>
               <ul className="bg-gray-800 px-4 py-2">
                 <li>
-                  <Link to="/features" className="flex text-gray-300 hover:text-gray-200 py-2">Features</Link>
+                  <Link to="/features" className="flex text-gray-300 hover:text-gray-200 py-2">אירועים</Link>
                 </li>
                 <li>
-                  <Link to="/pricing" className="flex text-gray-300 hover:text-gray-200 py-2">Pricing</Link>
+                  <Link to="/videos" className="flex text-gray-300 hover:text-gray-200 py-2">גלריה תמונות וסרטונים</Link>
                 </li>
                 <li>
+                  <Link to="/pricing" className="flex text-gray-300 hover:text-gray-200 py-2">מחירים</Link>
+                </li>
+                {/* <li>
                   <Link to="/blog" className="flex text-gray-300 hover:text-gray-200 py-2">Blog</Link>
-                </li>
+                </li> */}
                 <li>
-                  <Link to="/about" className="flex text-gray-300 hover:text-gray-200 py-2">About us</Link>
+                  <Link to="/about" className="flex text-gray-300 hover:text-gray-200 py-2">מידע עלינו</Link>
                 </li>
-                <li className="py-2 my-2 border-t border-b border-gray-700">
+                {/* <li className="py-2 my-2 border-t border-b border-gray-700">
                   <span className="flex text-gray-300 py-2">Support</span>
                   <ul className="pl-4">
                     <li>
@@ -137,12 +140,12 @@ function Header() {
                       <Link to="/404" className="text-sm flex font-medium text-gray-400 hover:text-gray-200 py-2">404</Link>
                     </li>
                   </ul>
+                </li> */}
+                <li>
+                  <Link to="/signin" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">כניסה</Link>
                 </li>
                 <li>
-                  <Link to="/signin" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Sign in</Link>
-                </li>
-                <li>
-                  <Link to="/signup" className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out">Sign up</Link>
+                  <Link to="/signup" className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out">הרשמה</Link>
                 </li>
               </ul>
             </nav>
